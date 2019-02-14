@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include elastic_run *.css
+recursive-include elastic_run *.csv
+recursive-include elastic_run *.html
+recursive-include elastic_run *.ico
+recursive-include elastic_run *.js
+recursive-include elastic_run *.json
+recursive-include elastic_run *.md
+recursive-include elastic_run *.png
+recursive-include elastic_run *.py
+recursive-include elastic_run *.svg
+recursive-include elastic_run *.txt
+recursive-exclude elastic_run *.pyc
