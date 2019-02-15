@@ -14,8 +14,10 @@ def update_items_based_on_slab(doc, method):
 
         for scheme in frappe.get_all('Promotional Scheme',
             {'slab': d.slab}):
-            doc = frappe.get_doc('Promotional Scheme', scheme.name)
-            doc.append('items', {
-                'item_code': doc.name
-            })
-            doc.save()
+            ps_doc = frappe.get_doc('Promotional Scheme', scheme.name)
+
+            if doc.name not in [row.item_code for row in ps_doc.items]:
+                ps_doc.append('items', {
+                    'item_code': doc.name
+                })
+                ps_doc.save()
