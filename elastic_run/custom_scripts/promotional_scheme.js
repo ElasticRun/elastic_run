@@ -1,10 +1,10 @@
 frappe.ui.form.on('Promotional Scheme', {
-    slab: function(frm) {
-        if (frm.doc.slab) {
+    category: function(frm) {
+        if (frm.doc.category) {
             frappe.call({
-                method: "elastic_run.elastic_run.doctype.slab.slab.get_items",
+                method: "elastic_run.elastic_run.doctype.category.category.get_items",
                 args: {
-                    'slab': frm.doc.slab
+                    'category': frm.doc.category
                 },
                 callback: function(r) {
                     if(r && r.message) {

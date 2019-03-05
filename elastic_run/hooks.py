@@ -81,7 +81,7 @@ app_license = "MIT"
 
 doc_events = {
     "Item": {
-        "validate": "elastic_run.utils.update_items_based_on_slab",
+        "validate": "elastic_run.utils.update_items_based_on_category",
     }
 }
 

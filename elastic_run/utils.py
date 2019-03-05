@@ -6,14 +6,14 @@
 from __future__ import unicode_literals
 import frappe
 
-def update_items_based_on_slab(doc, method):
-    for d in doc.slabs:
+def update_items_based_on_category(doc, method):
+    for d in doc.categories:
         if not d.is_new:
             d.is_new = 0
             continue
 
         for scheme in frappe.get_all('Promotional Scheme',
-            {'slab': d.slab}):
+            {'category': d.category, 'apply_on': 'Item Code'}):
             ps_doc = frappe.get_doc('Promotional Scheme', scheme.name)
 
             if doc.name not in [row.item_code for row in ps_doc.items]:
