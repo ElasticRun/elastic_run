@@ -10,7 +10,7 @@ frappe.ui.form.on('Promotional Scheme', {
                     if(r && r.message) {
                         frm.doc.items = [];
                         r.message.forEach(d => {
-                            var row = frappe.model.add_child(frm.doc, "Apply Rule On Item Code", "items");
+                            var row = frappe.model.add_child(frm.doc, "Pricing Rule Item Code", "items");
 						    row.item_code = d.item_code;
                         })
 
